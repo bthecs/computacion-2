@@ -9,9 +9,12 @@ s.connect((host, port))
 
 while True:
     msg = input('Ingrese msg: ').encode()
-    try:
-        s.sendto(msg, (host, port))
-    except socket.error:
-        print('Error Code: ' + str(msg[0]) + 'Message' + msg[1])
-        s.close()
+    if msg.decode() == 'exit':
+        sys.exit()
+    else:
+        try:
+            s.sendto(msg, (host, port))
+        except socket.error:
+            print('Error Code: ' + str(msg[0]) + 'Message' + msg[1])
+            sys.exit()
 s.close()

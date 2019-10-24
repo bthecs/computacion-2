@@ -29,6 +29,6 @@ while True:
         while True:
             msg = clientsocket.recv(1024)
             print("Recibido: %s" % msg.decode())
-            msg = "Ok" + " \r\n"
-            clientsocket.send(msg.encode("ascii"))
+            sys.exit()
+        print("cliente desconectado")
         clientsocket.close()
