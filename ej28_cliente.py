@@ -9,6 +9,8 @@ except socket.error:
 
 print ('Socket Creado!')
 
+#host = str(sys.argv[1])
+#port = int(sys.argv[2])
 host = str(sys.argv[1])
 port = int(sys.argv[2])
 
